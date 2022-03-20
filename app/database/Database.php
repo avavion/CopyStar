@@ -3,7 +3,7 @@
 $username = 'root';
 $password = 'avavionmvm';
 $host = 'localhost';
-$dbname = 'eshop';
+$dbname = 'copy_star';
 
 $dsn = 'mysql:host=' . $host . ';dbname=' . $dbname . ';charset=utf8';
 

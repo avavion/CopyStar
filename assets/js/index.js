@@ -213,10 +213,6 @@ const cart = () => {
             })
     }
 
-    const createOrder = (data) => {
-
-    }
-
     render();
 
     button.addEventListener('click', (evt) => {
@@ -229,9 +225,11 @@ const cart = () => {
             id: user_id, data: json
         }
 
-        post(location.origin + '/app/api/cart/add.php', body).then((response) => response.text()).then((data) => {
-            console.log(data)
-        });
+        post(location.origin + '/app/api/cart/add.php', body)
+            .then((response) => response.text())
+            .then((data) => {
+                console.log(data)
+            });
     });
 
 }

@@ -1,16 +1,17 @@
 <?php
 
 require "../../database/Database.php";
-require "../../database/models/Products.php";
 
 global $database;
 
-$data = json_decode(file_get_contents('php://input'));
+$data = json_decode(file_get_contents('php://input'), true);
 
-$json = json_encode($data->data);
-////print_r($json);
-////print_r();
+$user_id = $data['id'];
+$items = json_encode($data['data']);
 
-//$sql = "INSERT INTO `orders` (`user_id`, `items`) VALUES ('2', '{\"id\": 1}')";
+$SQL = "INSERT INTO `orders` (`user_id`, `items`) VALUES (:user_id, :cart_items)";
+$database->prepare($SQL)->execute(['user_id' => $user_id, 'cart_items' => $items]);
 
-$database->query("INSERT INTO `orders` (`user_id`, `items`) VALUES({$data->id}, {$json})");
+$order_id = $database->lastInsertId();
+
+echo json_encode(['order_id' => $order_id, 'message' => 'Заказ успешно сформирован']);

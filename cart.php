@@ -37,17 +37,21 @@ if (!isset($user)) header('Location: /login.php');
             </div>
 
             <div class="section-body">
-                <div class="cart-items"></div>
+                <div class="cart__wrapper">
 
-                <div class="cart-info">
-                    <h3 class="cart-info__title">
-                        Итоговая стоимость: <span cart-total-price='0'>0</span>
-                    </h3>
+                    <div class="cart-items"></div>
 
-                    <button data-user-id="<?= $user['id']; ?>" class="js-create-order button button--primary">
-                        Создать заказ
-                    </button>
+                    <div class="cart-info">
+                        <h3 class="cart-info__title">
+                            Итоговая стоимость:<br><span cart-total-price='0'>0</span> руб.
+                        </h3>
+
+                        <button data-user-id="<?= $user['id']; ?>" class="w100 js-create-order button button--primary">
+                            Создать заказ
+                        </button>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
