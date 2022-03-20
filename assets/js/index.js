@@ -168,7 +168,7 @@ const cart = () => {
 
     const container = cart.querySelector('.cart-items');
     const button = cart.querySelector('.js-create-order');
-    const totalPrice = cart.querySelector('[cart-total-price]');
+    const totalPrice = cart.querySelector('.cart-info__title span');
 
     const render = () => {
         container.innerHTML = '';
@@ -189,9 +189,9 @@ const cart = () => {
                     }
                 }
 
-                const TOTAL_PRICE = items.reduce((prev, curr) => prev += curr.price, 0)
+                const TOTAL_PRICE = items.reduce((prev, curr) => prev += parseInt(curr.price), 0)
 
-                totalPrice.textContent = TOTAL_PRICE;
+                totalPrice.textContent = parseInt(TOTAL_PRICE);
 
                 items.map((item) => {
 
@@ -226,10 +226,8 @@ const cart = () => {
         }
 
         post(location.origin + '/app/api/cart/add.php', body)
-            .then((response) => response.text())
-            .then((data) => {
-                console.log(data)
-            });
+            .then((response) => response.json())
+            .then((data) => notification(data.message));
     });
 
 }

@@ -14,4 +14,4 @@ $database->prepare($SQL)->execute(['user_id' => $user_id, 'cart_items' => $items
 
 $order_id = $database->lastInsertId();
 
-echo json_encode(['order_id' => $order_id, 'message' => 'Заказ успешно сформирован']);
+echo json_encode(['order_id' => $order_id, 'message' => "Заказ успешно сформирован! Номер вашего заказа #{$order_id}"]);
