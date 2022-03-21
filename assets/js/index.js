@@ -227,7 +227,12 @@ const cart = () => {
 
         post(location.origin + '/app/api/cart/add.php', body)
             .then((response) => response.json())
-            .then((data) => notification(data.message));
+            .then((data) => {
+                if (data.status) {
+                    notification(data.message);
+                    setLocalStorage('cart', JSON.stringify([]));
+                }
+            });
     });
 
 }

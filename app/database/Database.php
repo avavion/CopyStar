@@ -1,7 +1,7 @@
 <?php
 
 $username = 'root';
-$password = '';
+$password = 'avavionmvm';
 $host = 'localhost';
 $dbname = 'copy_star';
 

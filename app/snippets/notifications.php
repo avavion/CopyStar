@@ -1,3 +1,1 @@
-<div class="notifications" id="notifications">
-
-</div>
+<div class="notifications" id="notifications"></div>
