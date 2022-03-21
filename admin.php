@@ -13,6 +13,7 @@ require 'app/database/models/Products.php';
 
 $collections = getAllCollection();
 $products = getAllProducts();
+$count_products = count($products);
 
 $collection_id = 0;
 
@@ -65,6 +66,10 @@ if (isset($_GET['collection_id'])) {
                     <?php endforeach; ?>
                 </div>
 
+                <div class='bar'>
+                    <p class='bold black'>Всего продуктов: <span class='green'><?= $count_products; ?></span></p>
+                </div>
+
                 <div class="collections">
                     <?php foreach ($products as $product) : ?>
 
@@ -100,7 +105,7 @@ if (isset($_GET['collection_id'])) {
                                     Перейти
                                 </a>
 
-                                <a href="/product.php?product_id=<?= $product['id']; ?>" class="collection__button button button--primary">
+                                <a href="/update_product.php?product_id=<?= $product['id']; ?>" class="collection__button button button--primary">
                                     Редактировать
                                 </a>
 

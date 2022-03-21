@@ -26,7 +26,6 @@ if (isset($_POST)) {
         header('Location: /cart.php');
         die();
     }
-
 }
 
 header('Location: /login.php');

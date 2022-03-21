@@ -416,7 +416,7 @@ body {
   flex-direction: row;
   gap: 30px;
 
-  margin-bottom: 60px;
+  margin-bottom: 10px;
 }
 
 .filter-item {
@@ -435,4 +435,8 @@ body {
 .collection__buttons {
   gap: 10px;
   margin-top: 10px;
+}
+
+.bar {
+  margin: 30px 0;
 }

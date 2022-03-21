@@ -30,7 +30,6 @@ if (isset($_POST)) {
         header('Location: /index.php');
         die();
     }
-
 }
 
 header('Location: /register.php');
