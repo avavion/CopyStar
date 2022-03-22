@@ -13,7 +13,6 @@ require 'app/database/models/Products.php';
 
 $collections = getAllCollection();
 $products = getAllProducts();
-$count_products = count($products);
 
 $collection_id = 0;
 
@@ -22,6 +21,7 @@ if (isset($_GET['collection_id'])) {
     $products = getItemsByCollectionId($collection_id);
 }
 
+$count_products = count($products);
 
 ?>
 
