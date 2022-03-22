@@ -23,14 +23,7 @@ if (isset($_SESSION['user'])) $user = $_SESSION['user'];
 <html lang="ru">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <link rel="stylesheet" href="assets/css/fonts.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-
-    <script src="assets/js/index.js"></script>
+    <?php require('app/snippets/meta-tags.php'); ?>
     <title>Каталог: <?= $product['name'] ?></title>
 </head>
 
@@ -57,9 +50,9 @@ if (isset($_SESSION['user'])) $user = $_SESSION['user'];
 
                     <div class="product__gallery">
                         <?php if (isset($product['image'])) : ?>
-                            <img src="assets/img/<?= str_replace(' ', '_', $product['image']); ?>" alt="<?= $product['name']; ?>" />
+                            <img width='1280' height="1024" src="assets/img/<?= str_replace(' ', '_', $product['image']); ?>" alt="<?= $product['name']; ?>" />
                         <?php else : ?>
-                            <img src="assets/img/printer.png" alt="<?= $product['name']; ?>" />
+                            <img width='1280' height="1024" src="assets/img/printer.png" alt="<?= $product['name']; ?>" />
                         <?php endif; ?>
                     </div>
 
